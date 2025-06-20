@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layout/DefaultLayout"
 import Homepage from "./pages/homepage"
 import AllSetOpening from "./pages/AllSetOpening"
+import NotFound from "./pages/NotFound"
 
 function App() {
 
@@ -15,9 +16,9 @@ function App() {
 
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Homepage />} />
-            <Route path="/booster" element={<AllSetOpening/>} />
+            <Route path="/booster" element={<AllSetOpening />} />
             <Route path="/booster/:slug" element={<div>booster details</div>} />
-            <Route path="*" element={<div>page not found</div>} />
+            <Route path="*" element={<NotFound />} />
 
           </Route>
         </Routes>
