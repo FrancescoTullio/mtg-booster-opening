@@ -1,15 +1,7 @@
-import { useState, useEffect, useMemo } from "react"
-import axios from "axios"
-import UseBooster from "./hook/UseBooster"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layout/DefaultLayout"
 
 function App() {
-
-  const filterSet = UseBooster()
-
-
-
 
   return (
     <>
