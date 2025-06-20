@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layout/DefaultLayout"
 import Homepage from "./pages/homepage"
+import AllSetOpening from "./pages/AllSetOpening"
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
 
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Homepage />} />
-            <Route path="/booster" element={<div>booster</div>} />
+            <Route path="/booster" element={<AllSetOpening/>} />
             <Route path="/booster/:slug" element={<div>booster details</div>} />
             <Route path="*" element={<div>page not found</div>} />
 
