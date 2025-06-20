@@ -3,6 +3,7 @@ import DefaultLayout from "./layout/DefaultLayout"
 import Homepage from "./pages/homepage"
 import AllSetOpening from "./pages/AllSetOpening"
 import NotFound from "./pages/NotFound"
+import OpeningPage from "./pages/OpeningPage"
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Homepage />} />
             <Route path="/booster" element={<AllSetOpening />} />
-            <Route path="/booster/:slug" element={<div>booster details</div>} />
+            <Route path="/booster/:code" element={<OpeningPage />} />
             <Route path="*" element={<NotFound />} />
 
           </Route>
