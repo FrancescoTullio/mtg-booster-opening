@@ -1,13 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
 import UseSpecificSet from "../hook/UseSpecificSet";
+
+import { useState } from "react";
+import CardOpening from "../components/cardopening";
+
 import Looder from "../components/Looder"
+
 
 
 const OpeningPage = () => {
 
     const { code } = useParams();
     const navigate = useNavigate();
+
+   
+
     const { specificOpening, handleOpen, load } = UseSpecificSet(code);
+
 
 
 
@@ -30,11 +39,7 @@ const OpeningPage = () => {
                             }
                             {(specificOpening && !load) && specificOpening.map((card, index) => (
                                 <div key={index} className="card m-2" style={{ width: "18rem" }}>
-                                    <img src={card.imageUrl} className="card-img-top" alt={card.name} />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{card.name}</h5>
-                                        <p className="card-text">Rarity: {card.rarity}</p>
-                                    </div>
+                                    <CardOpening card={card} />
                                 </div>
                             ))}
                         </div>
