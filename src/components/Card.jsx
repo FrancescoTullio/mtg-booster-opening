@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Card = ({ data }) => {
 
-    const { code, name, type, releasedDate, block } = data
+    const { code, name} = data
 
 
     return (

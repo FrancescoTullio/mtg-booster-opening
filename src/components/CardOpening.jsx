@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, memo } from "react";
 
 
 const CardOpening = ({ card }) => {
@@ -34,4 +34,4 @@ const CardOpening = ({ card }) => {
     )
 }
 
-export default CardOpening
+export default memo(CardOpening)
