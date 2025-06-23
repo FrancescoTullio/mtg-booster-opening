@@ -1,9 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import UseSpecificSet from "../hook/UseSpecificSet";
-
-import { useState } from "react";
-import CardOpening from "../components/cardopening";
-
+import CardOpening from "../components/CardOpening";
 import Looder from "../components/Looder"
 
 
