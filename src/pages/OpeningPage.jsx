@@ -1,15 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
 import UseSpecificSet from "../hook/UseSpecificSet";
+
 import { useState } from "react";
 import CardOpening from "../components/cardopening";
+
+import Looder from "../components/Looder"
+
 
 
 const OpeningPage = () => {
 
     const { code } = useParams();
     const navigate = useNavigate();
-    const { specificOpening, handleOpen } = UseSpecificSet(code);
-    const [reveled, setReveled] = useState(false);
+
+   
+
+    const { specificOpening, handleOpen, load } = UseSpecificSet(code);
+
 
 
 
@@ -20,14 +27,17 @@ const OpeningPage = () => {
                 <div className="d-flex justify-content-center align-items-center flex-column">
                     <div className="rettangolo "></div>
                 </div>
-                <button className="btn btn-success" onClick={handleOpen}> apri</button>
+                <button className="btn btn-success" onClick={handleOpen} disabled={load}> apri</button>
             </div>
             <div>
                 <div className="container">
                     <div className="d-flex justify-content-center align-items-center flex-column">
                         <h2>Pacchetto aperto</h2>
                         <div className="d-flex flex-wrap justify-content-center">
-                            {specificOpening && specificOpening.map((card, index) => (
+                            {
+                                load && <Looder />
+                            }
+                            {(specificOpening && !load) && specificOpening.map((card, index) => (
                                 <div key={index} className="card m-2" style={{ width: "18rem" }}>
                                     <CardOpening card={card} />
                                 </div>
